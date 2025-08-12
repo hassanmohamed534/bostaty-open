@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>بوستاتي - افتح التطبيق أو حمّل</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+    p {
+      font-size: 1.2rem;
+      margin-top: 30px;
+    }
+    a.download-link {
+      color: #ffd700;
+      font-weight: bold;
+      text-decoration: none;
+      background: rgba(0,0,0,0.2);
+      padding: 10px 25px;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    a.download-link:hover {
+      background: #ffd700;
+      color: #4b0082;
+    }
+    .loader {
+      margin: 40px auto;
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid #ffd700;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+  </style>
+  <script>
+    function openApp() {
+      const packageName = "com.postat.hassan";
+      const downloadUrl = "https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file";
+
+      const appIntent = `intent://#Intent;package=${packageName};end`;
+
+      window.location = appIntent;
+
+      setTimeout(() => {
+        window.location = downloadUrl;
+      }, 2000);
+    }
+  </script>
+</head>
+<body onload="openApp()">
+  <h2>جارٍ فتح تطبيق بوستاتي...</h2>
+  <div class="loader"></div>
+  <p>لو ما فتحش التطبيق، <a class="download-link" href="https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file">اضغط هنا لتحميله</a></p>
+</body>
+</html>
