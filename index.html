@@ -2,7 +2,8 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <title>بوستاتي - افتح التطبيق أو حمّل أو تواصل</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوستاتي AI - تطبيق مصري</title>
   <style>
     body {
       background: linear-gradient(135deg, #667eea, #764ba2);
@@ -11,10 +12,48 @@
       text-align: center;
       padding: 50px 20px;
     }
-    h2 {
+    h2, h3 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      font-weight: bold;
+      color: #ffd700;
+    }
+    h3 {
+      color: #ff6347;
+    }
+    .description, .features {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      text-align: justify;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .description p, .features p {
+      font-weight: bold;
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+    .feature-list li {
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    .social-links {
+      margin-top: 30px;
+    }
+    .social-links a {
+      background: #3b5998;
+      margin: 5px;
+      padding: 12px 30px;
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .social-links a:hover {
+      background: #0d47a1;
     }
     button, a.button-link {
       background: #ffd700;
@@ -35,30 +74,63 @@
       background: #4b0082;
       color: #ffd700;
     }
+    .privacy-policy {
+      margin-top: 40px;
+      font-size: 1.1rem;
+      color: #ffd700;
+    }
   </style>
   <script>
-    function openApp() {
-      const packageName = "com.postat.hassan";
-      const appIntent = `intent://#Intent;package=${packageName};end`;
-      window.location = appIntent;
-    }
     function openStore() {
-      openApp();
-      setTimeout(() => {
-        window.location = "https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file";
-      }, 2000);
+      window.location = "https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file";
     }
     function openWhatsApp() {
       window.location = "https://wa.me/+201016243039";
     }
+    function openFacebook() {
+      window.location = "https://www.facebook.com/hassanmohamed074";
+    }
+    function openTelegram() {
+      window.location = "https://t.me/hassan_mohamed_074";
+    }
+    function openPrivacy() {
+      window.location = "/privacy-policy.html";  // Create this file separately
+    }
   </script>
 </head>
 <body>
-  <h2>بوستاتي - افتح التطبيق أو حمّل أو تواصل</h2>
-  <button onclick="openStore()">افتح التطبيق أو حمّل</button>
-  <br />
-  <a class="button-link" href="https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file" target="_blank" rel="noopener">تحميل التطبيق من ميديا فاير</a>
-  <br />
-  <button onclick="openWhatsApp()">تواصل معي على واتساب</button>
+  <h2>✅ <span style="color:#ff6347;">شرح تفصيلي لتطبيق بوستاتي AI</span></h2>
+  <div class="description">
+    <p><strong>*بوستاتي AI هو تطبيق مصري الصنع 💪،*</strong></p>
+    <p><strong>*بيجمعلك أقوى وأغرب وأجمل أنواع البوستات كلها في مكان واحد، علشان تلاقي اللي على مزاجك في ثانية، وده كله بواجهة سهلة وسريعة.*</strong></p>
+    
+    <h3><span style="color:#ff6347;">🧠 مميزات التطبيق:</span></h3>
+    <ul class="feature-list">
+      <li><strong>ذكاء اصطناعي Chat gpt</strong></li>
+      <li><strong>تصنيفات متنوعة جدًا زي: بوستات حب 💞، بوستات سرسجية 😂🔥، بوستات رومانسية 😍، بوستات اعتذار 💔، بوستات دينيه و إسلامية 🕋، بوستات مترجمة 🌍، بوستات عيد ميلاد 🎂، اسكربتات قصيرة وروايات ✍️، آيات قرآنية، أدعية إسلامية</strong></li>
+      <li><strong>قسم ChatGPT مدمج داخل التطبيق</strong></li>
+      <li><strong>التطبيق يعمل بدون إنترنت في معظم الأقسام</strong></li>
+      <li><strong>حجمه خفيف ومناسب لكل الأجهزة (12 ميجا فقط)</strong></li>
+    </ul>
+  </div>
+
+  <div class="features">
+    <p><strong>🎯 **رابط التحميل مباشر وبدون إعلانات**:</strong></p>
+  </div>
+
+  <!-- أزرار تانية هنا في الأسفل -->
+  <div class="social-links">
+    <button onclick="openStore()">افتح التطبيق أو حمّل</button>
+    <a class="button-link" href="https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file" target="_blank" rel="noopener"><strong>تحميل التطبيق من ميديا فاير</strong></a>
+    <br />
+    <button onclick="openWhatsApp()">تواصل معي على واتساب</button>
+    <br />
+    <a href="https://www.facebook.com/hassanmohamed074" class="social-btn" target="_blank"><strong>تواصل عبر فيسبوك</strong></a>
+    <a href="https://t.me/hassan_mohamed_074" class="social-btn" target="_blank"><strong>تواصل عبر تليجرام</strong></a>
+  </div>
+
+  <div class="privacy-policy">
+    <a href="javascript:void(0);" onclick="openPrivacy()"><strong>سياسة الخصوصية</strong></a>
+  </div>
 </body>
 </html>
