@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <title>بوستاتي - افتح التطبيق أو حمّل</title>
+  <title>بوستاتي - افتح التطبيق أو حمّل أو تواصل</title>
   <style>
     body {
       background: linear-gradient(135deg, #667eea, #764ba2);
@@ -13,26 +13,27 @@
     }
     h2 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     }
-    p {
-      font-size: 1.2rem;
-      margin-top: 30px;
-    }
-    a.download-link {
-      color: #ffd700;
-      font-weight: bold;
-      text-decoration: none;
-      background: rgba(0,0,0,0.2);
-      padding: 10px 25px;
-      border-radius: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    a.download-link:hover {
+    button, a.button-link {
       background: #ffd700;
       color: #4b0082;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      margin: 15px 10px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    button:hover, a.button-link:hover {
+      background: #4b0082;
+      color: #ffd700;
     }
     .loader {
       margin: 40px auto;
@@ -51,21 +52,26 @@
   <script>
     function openApp() {
       const packageName = "com.postat.hassan";
-      const downloadUrl = "https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file";
-
       const appIntent = `intent://#Intent;package=${packageName};end`;
-
       window.location = appIntent;
-
+    }
+    function openStore() {
+      openApp();
       setTimeout(() => {
-        window.location = downloadUrl;
+        window.location = "https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file";
       }, 2000);
+    }
+    function openWhatsApp() {
+      window.location = "https://wa.me/+201016243039";
     }
   </script>
 </head>
-<body onload="openApp()">
-  <h2>جارٍ فتح تطبيق بوستاتي...</h2>
-  <div class="loader"></div>
-  <p>لو ما فتحش التطبيق، <a class="download-link" href="https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file">اضغط هنا لتحميله</a></p>
+<body>
+  <h2>بوستاتي - افتح التطبيق أو حمّل أو تواصل</h2>
+  <button onclick="openStore()">افتح التطبيق أو حمّل</button>
+  <br />
+  <a class="button-link" href="https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file" target="_blank" rel="noopener">تحميل التطبيق من ميديا فاير</a>
+  <br />
+  <button onclick="openWhatsApp()">تواصل معي على واتساب</button>
 </body>
 </html>
