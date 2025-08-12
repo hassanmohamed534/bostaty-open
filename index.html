@@ -6,52 +6,74 @@
   <title>بوستاتي AI - تطبيق مصري</title>
   <style>
     body {
-      background: linear-gradient(135deg, #2c3e50, #34495e);
-      color: white;
+      background-color: #ffffff; /* خلفية بيضاء */
+      color: #2c3e50; /* النص باللون الأسود */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
       padding: 30px;
+      margin: 0;
     }
+
     h2 {
       font-size: 2.5rem;
       color: #ff6347;
       font-weight: bold;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     }
+
     h3 {
       font-size: 2rem;
       color: #f39c12;
       font-weight: bold;
       margin-top: 15px;
     }
-    .description, .features {
-      font-size: 1.2rem;
-      text-align: justify;
+
+    .description, .features, .category-section {
       margin-top: 20px;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      text-align: justify;
+      color: #2c3e50;
     }
-    .description p, .features p {
+
+    .description p, .features p, .category-section p {
       font-weight: normal;
-      color: #ecf0f1;
       font-size: 1.1rem;
+      color: #34495e; /* النص باللون الرمادي الداكن */
     }
+
     .description strong, .features strong {
       color: #ffeb3b;
     }
+
+    .category-section {
+      background-color: #fff; /* المربع الأبيض */
+      color: #2c3e50;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .category-section:nth-child(even) {
+      background-color: #f39c12;
+      color: #fff;
+    }
+
     .feature-list {
       list-style-type: none;
       padding: 0;
       margin: 20px auto;
       font-size: 1.1rem;
     }
+
     .feature-list li {
       margin-bottom: 15px;
-      color: #ecf0f1;
+      color: #34495e;
       font-weight: bold;
     }
+
     button, a.button-link {
       background: #ff6347;
       color: #fff;
@@ -62,18 +84,21 @@
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       text-decoration: none;
       display: inline-block;
       transition: background 0.3s ease, color 0.3s ease;
     }
+
     button:hover, a.button-link:hover {
       background: #d35400;
       color: #fff;
     }
+
     .social-links {
       margin-top: 30px;
     }
+
     .social-links a {
       background: #3b5998;
       margin: 5px;
@@ -87,9 +112,11 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     .social-links a:hover {
       background: #0d47a1;
     }
+
     .privacy-policy {
       margin-top: 40px;
       font-size: 1.1rem;
@@ -100,18 +127,7 @@
       font-weight: bold;
       font-size: 1.5rem;
       margin-top: 30px;
-    }
-
-    .category-section {
-      margin: 30px auto;
-      padding: 20px;
-      background-color: #2ecc71;
-      color: #fff;
-      border-radius: 10px;
-      width: 80%;
-    }
-    .category-section:nth-child(even) {
-      background-color: #f39c12;
+      color: #ff6347; /* لون العنوان الرئيسي */
     }
   </style>
   <script>
@@ -193,11 +209,4 @@
   </div>
 
   <div class="category-section">
-    <h3 class="section-title">بوستات مترجمة 🌍</h3>
-    <p>نقدم لك بوستات مترجمة بلغات مختلفة لتتمكن من التواصل مع الجميع بكل سهولة.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات عيد ميلاد 🎂</h3>
-    <p>احتفل مع أصدقائك بأجمل بوستات عيد الميلاد التي تحمل الأمنيات الطيبة والسعيدة.</p>
-  </div>
+    <
