@@ -5,129 +5,316 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>بوستاتي AI - تطبيق مصري</title>
   <style>
-    body {
-      background-color: #000000; /* خلفية بيضاء */
-      color: #2c3e50; /* النص باللون الأسود */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 30px;
-      margin: 0;
+    :root {
+      --main-bg: #000;
+      --card-bg: #fff;
+      --accent: #ff6347;
+      --gold: #ffd700;
+      --primary: #0ea3c6;
+      --secondary: #f39c12;
+      --blue-dark: #1877f2;
+      --turquoise: #00c7b7;
+      --text-main: #222f3e;
+      --text-alt: #222f3e;
+      --shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
-
+    body {
+      background: var(--main-bg);
+      color: var(--text-main);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+    .navbar {
+      width: 100%;
+      background: #111;
+      box-shadow: var(--shadow);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .navbar .logo {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+    .navbar .menu-btn {
+      background: none;
+      border: none;
+      font-size: 2.1rem;
+      color: var(--accent);
+      cursor: pointer;
+      outline: none;
+      margin-left: 10px;
+      margin-right: 0;
+    }
+    .welcome-message {
+      background: linear-gradient(90deg, #0ea3c6 0%, #1877f2 60%, #ff6347 100%);
+      color: #fff;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      border-bottom-left-radius: 80px 45px;
+      border-bottom-right-radius: 80px 45px;
+      border-top-left-radius: 45px 20px;
+      border-top-right-radius: 45px 20px;
+      box-shadow: 0 8px 30px rgba(14,163,198,0.09);
+      position: relative;
+      overflow: hidden;
+    }
+    .welcome-message::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0; bottom: -1px;
+      width: 100%; height: 35px;
+      background: radial-gradient(ellipse at 50% 100%, #fff2 0%, transparent 80%);
+      z-index: 2;
+      pointer-events: none;
+    }
     h2 {
-      font-size: 2.5rem;
-      color: #ff6347;
+      font-size: 2.3rem;
+      color: var(--accent);
       font-weight: bold;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.18);
+      text-align: center;
+      letter-spacing: 1px;
     }
-
-    h3 {
-      font-size: 2rem;
-      color: #f39c12;
+    h3, .section-title {
+      font-size: 1.65rem;
+      color: var(--secondary);
       font-weight: bold;
-      margin-top: 15px;
+      margin: 25px 0 10px 0;
+      text-align: right;
     }
-
     .description, .features, .category-section {
       margin-top: 20px;
-      max-width: 800px;
+      max-width: 850px;
       margin-left: auto;
       margin-right: auto;
       text-align: justify;
-      color: #2c3e50;
+      color: var(--text-main);
     }
-
     .description p, .features p, .category-section p {
       font-weight: normal;
-      font-size: 1.1rem;
-      color: #34495e; /* النص باللون الرمادي الداكن */
+      font-size: 1.13rem;
+      color: var(--text-alt) !important;
     }
-
     .description strong, .features strong {
-      color: #ffeb3b;
+      color: var(--gold);
     }
-
     .category-section {
-      background-color: #fff; /* المربع الأبيض */
-      color: #2c3e50;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: var(--card-bg);
+      color: var(--text-main);
+      padding: 22px;
+      border-radius: 11px;
+      box-shadow: var(--shadow);
       margin-bottom: 20px;
+      border-right: 6px solid var(--primary);
+      transition: box-shadow 0.2s;
     }
-
-    .category-section:nth-child(even) {
-      background-color: #f39c12;
+    .category-section:nth-of-type(even) {
+      background: var(--turquoise);
       color: #fff;
+      border-right: 6px solid var(--secondary);
     }
-
+    .category-section:nth-of-type(even) p {
+      color: #fff !important;
+    }
     .feature-list {
       list-style-type: none;
       padding: 0;
       margin: 20px auto;
-      font-size: 1.1rem;
+      font-size: 1.12rem;
     }
-
     .feature-list li {
       margin-bottom: 15px;
-      color: #34495e;
+      color: var(--primary);
       font-weight: bold;
+      transition: color 0.3s;
     }
-
     button, a.button-link {
-      background: #ff6347;
+      background: var(--accent);
       color: #fff;
       font-weight: bold;
-      font-size: 1.2rem;
-      padding: 15px 30px;
+      font-size: 1.18rem;
+      padding: 14px 28px;
       margin: 15px 10px;
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: var(--shadow);
       text-decoration: none;
       display: inline-block;
-      transition: background 0.3s ease, color 0.3s ease;
+      transition: background 0.3s, color 0.3s;
     }
-
     button:hover, a.button-link:hover {
-      background: #d35400;
+      background: var(--primary);
       color: #fff;
     }
-
     .social-links {
-      margin-top: 30px;
+      margin-top: 25px;
+      text-align: center;
     }
-
     .social-links a {
-      background: #3b5998;
-      margin: 5px;
-      padding: 12px 30px;
-      border-radius: 20px;
+      background: var(--blue-dark);
+      margin: 5px 7px;
+      padding: 11px 26px;
+      border-radius: 18px;
       color: white;
       text-decoration: none;
-      transition: background 0.3s ease;
-      display: block;
-      width: 300px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .social-links a:hover {
-      background: #0d47a1;
-    }
-
-    .privacy-policy {
-      margin-top: 40px;
-      font-size: 1.1rem;
-      color: #ffd700;
-    }
-
-    .section-title {
+      transition: background 0.3s;
+      display: inline-block;
       font-weight: bold;
-      font-size: 1.5rem;
-      margin-top: 30px;
-      color: #ff6347; /* لون العنوان الرئيسي */
+      font-size: 1.02rem;
+    }
+    .social-links a:hover {
+      background: var(--primary);
+    }
+    .download-btn {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 35px;
+    }
+    .privacy-policy {
+      margin-top: 35px;
+      font-size: 1.11rem;
+      color: var(--gold);
+      text-align: center;
+    }
+    .privacy-policy a {
+      color: var(--gold);
+      text-decoration: underline;
+      font-weight: bold;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: color 0.28s;
+    }
+    .privacy-policy a:hover {
+      color: var(--accent);
+    }
+    /* Sidebar styles */
+    .sidebar-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.32);
+      z-index: 150;
+      display: none;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 320px;
+      max-width: 80vw;
+      height: 100vh;
+      background: var(--card-bg);
+      box-shadow: 2px 0 20px rgba(0,0,0,0.16);
+      z-index: 200;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    .sidebar-header {
+      padding: 28px 24px 18px 24px;
+      background: linear-gradient(90deg, var(--primary) 70%, var(--accent) 120%);
+      color: #fff;
+      text-align: right;
+    }
+    .sidebar-header .app-title {
+      font-size: 1.35rem;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .sidebar-header .dev-name {
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .sidebar-close {
+      position: absolute;
+      top: 19px; left: 19px;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+    .sidebar-content {
+      padding: 22px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+    .sidebar-content .sidebar-links {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .sidebar-content .sidebar-links a {
+      display: block;
+      background: var(--blue-dark);
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-weight: bold;
+      transition: background 0.3s;
+      text-align: right;
+    }
+    .sidebar-content .sidebar-links a:hover {
+      background: var(--primary);
+    }
+    .sidebar-content .sidebar-privacy {
+      width: 100%;
+      margin-top: 12px;
+    }
+    .sidebar-content .sidebar-privacy button {
+      width: 100%;
+      color: var(--gold);
+      background: none;
+      border: 2px solid var(--gold);
+      padding: 10px 0;
+      font-size: 1.09rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 8px;
+    }
+    .sidebar-content .sidebar-privacy button:hover {
+      background: var(--gold);
+      color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      h2 {font-size: 1.4rem;}
+      h3, .section-title {font-size: 1.1rem;}
+      .welcome-message {padding: 11px 0; font-size: 1.1rem;}
+      .category-section, .description, .features {padding: 10px;}
+      .navbar {padding: 7px 8px;}
+      .sidebar {width: 90vw;}
+      button, a.button-link {padding: 9px 10px; font-size: 1rem;}
+      .social-links a {width: 98%; padding: 7px;}
     }
   </style>
   <script>
@@ -144,81 +331,158 @@
       window.location = "https://t.me/hassan_mohamed_074";
     }
     function openPrivacy() {
-      window.location = "/privacy-policy.html";  // Ensure the privacy-policy.html file exists
+      window.location = "/privacy-policy.html";
     }
+    // Sidebar functionality
+    function openSidebar() {
+      document.getElementById('sidebar').classList.add('open');
+      document.getElementById('sidebar-overlay').style.display = "block";
+    }
+    function closeSidebar() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('sidebar-overlay').style.display = "none";
+    }
+    window.onload = function() {
+      document.getElementById('sidebar-overlay').onclick = closeSidebar;
+    };
   </script>
 </head>
 <body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <span class="logo">بوستاتي AI</span>
+    <button class="menu-btn" onclick="openSidebar()" title="القائمة">
+      &#8942;
+    </button>
+  </div>
+
+  <!-- Sidebar / Drawer -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <button class="sidebar-close" onclick="closeSidebar()" title="إغلاق القائمة">&times;</button>
+      <div class="app-title">بوستاتي AI</div>
+      <div class="dev-name">حسن محمد 🇪🇬</div>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-links">
+        <a href="javascript:openWhatsApp()">واتساب المطور</a>
+        <a href="javascript:openFacebook()">فيسبوك المطور</a>
+        <a href="javascript:openTelegram()">تيليجرام المطور</a>
+      </div>
+      <div class="sidebar-privacy">
+        <button onclick="openPrivacy()">سياسة الخصوصية</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- رسالة ترحيبية بكيرف وتدرج لوني جديد -->
+  <div class="welcome-message">
+    مرحباً بك في بوستاتي AI 👋<br>
+    اكتشف عالم البوستات الذكية والمتنوعة، وشارك أجمل الكلمات مع أصدقائك بسهولة!
+  </div>
+
   <h2>✅ شرح تفصيلي لتطبيق بوستاتي AI</h2>
 
   <div class="description">
-    <p><strong>بوستاتي AI هو تطبيق مصري الصنع 💪،</strong></p>
-    <p><strong>بيجمعلك أقوى وأغرب وأجمل أنواع البوستات كلها في مكان واحد، علشان تلاقي اللي على مزاجك في ثانية، وده كله بواجهة سهلة وسريعة.</strong></p>
+    <p><strong>بوستاتي AI هو تطبيق مصري مبتكر 💪</strong> يجمع لك أقوى وأغرب وأجمل أنواع البوستات كلها في مكان واحد، علشان تلاقي اللي يعبر عنك في ثواني مهما كان مزاجك أو المناسبة.</p>
+    <p>التطبيق سهل وبسيط، فيه تصنيفات متنوعة جداً، وذكاء اصطناعي متقدم يساعدك في الكتابة أو الترجمة أو إيجاد البوست المناسب لك.</p>
   </div>
 
   <h3>🧠 مميزات التطبيق:</h3>
   <div class="features">
     <ul class="feature-list">
-      <li><strong>ذكاء اصطناعي Chat GPT</strong></li>
-      <li><strong>تصنيفات متنوعة جدًا زي:
-      <li><strong>بوستات حب 💞،
-      <li><strong>بوستات سرسجية 😂🔥،
-      <li><strong>بوستات رومانسية 😍،
-      <li><strong>بوستات اعتذار 💔،
-      <li><strong>بوستات دينيه وإسلامية 🕋،
-      <li><strong>بوستات مترجمة 🌍،
-      <li><strong>بوستات عيد ميلاد 🎂،
-      <li><strong>اسكربتات قصيرة وروايات ✍️، 
-      <li><strong>آيات قرآنية 
-      <li><strong>أدعية إسلامية
-      <li><strong>قسم ChatGPT مدمج داخل التطبيق</strong></li>
-      <li><strong>التطبيق يعمل بدون إنترنت في معظم الأقسام</strong></li>
-      <li><strong>حجمه خفيف ومناسب لكل الأجهزة (12 ميجا فقط)</strong></li>
-      <li><strong>واجهة عصرية وسريعة جدًا و مفيش لاج ولا تهنيج</strong></li>
-      <li><strong>قسم التحديثات:</strong> تتبع كل جديد في التطبيق، زي الإضافات، تحسينات الأداء، التحديثات القادمة، واقتراحات المستخدمين التي تم تنفيذها ✅</li>
+      <li><strong>ذكاء اصطناعي ChatGPT</strong> مدمج داخل التطبيق لمساعدتك في كتابة وتوليد نصوص متنوعة.</li>
+      <li><strong>تصنيفات متنوعة جداً</strong> مثل بوستات حب، سرسجية، رومانسية، اعتذار، دينية، مترجمة، عيد ميلاد، اسكربتات قصيرة، روايات، آيات قرآنية، أدعية إسلامية.</li>
+      <li><strong>أغلب الأقسام تعمل بدون إنترنت</strong> لتوفير سهولة وسرعة في الاستخدام.</li>
+      <li><strong>حجم خفيف جداً</strong> مناسب لكل الأجهزة (12 ميجا فقط).</li>
+      <li><strong>واجهة عصرية وسريعة جداً</strong> بدون تهنيج أو تأخير.</li>
+      <li><strong>قسم التحديثات</strong> لمتابعة كل جديد في التطبيق واقتراحات المستخدمين.</li>
     </ul>
   </div>
 
   <div class="features">
     <p><strong>🔗 معلومات إضافية:</strong></p>
     <ul>
-      <li><strong>التطبيق يعمل بدون إنترنت في معظم الأقسام</strong></li>
-      <li><strong>حجمه خفيف ومناسب لكل الأجهزة (12 ميجا فقط)</strong></li>
-      <li><strong>كل الحقوق محفوظة باسم المطور: حسن محمد 🇪🇬</strong></li>
+      <li>التطبيق من تطوير <strong>حسن محمد 🇪🇬</strong> وكل الحقوق محفوظة.</li>
+      <li>يدعم جميع الأعمار ويعمل على كل أجهزة الأندرويد.</li>
     </ul>
   </div>
 
-  <div class="features">
-    <button onclick="openStore()">💾 تحميل التطبيق مباشر بدون إعلانات</button>
-  </div>
-
-  <!-- Start category sections -->
+  <!-- شرح جميع الأقسام -->
   <div class="category-section">
     <h3 class="section-title">بوستات حب 💞</h3>
-    <p>كل ما تحتاجه من بوستات حب رومانسية وتعبير عن مشاعر القلب. لا تفوت فرصة إرسال أجمل الكلمات لحبيبك!</p>
+    <p>أجمل وأرق الكلمات والعبارات للتعبير عن مشاعر الحب والرومانسية تجاه من تحب، لتشاركها مع شريك حياتك أو خطيبك أو حتى تعبر عن مشاعرك للأصدقاء.</p>
   </div>
 
   <div class="category-section">
     <h3 class="section-title">بوستات سرسجية 😂🔥</h3>
-    <p>لما تحب تضحك وتضيف جو من الفكاهة على يومك، هنالك كل ما هو ساخن من البوستات الضاحكة.</p>
+    <p>بوستات فكاهية وساخرة تعكس روح الشباب المصري، تناسب المواقف اليومية والمقالب بين الأصدقاء، وتضيف جو من الضحك والمرح على يومك.</p>
   </div>
 
   <div class="category-section">
     <h3 class="section-title">بوستات رومانسية 😍</h3>
-    <p>في هذا القسم، هتلاقي أجمل الكلمات الرومانسية التي تعبر عن الحب والعشق بأفضل شكل.</p>
+    <p>كلمات رقيقة وعبارات حالمة تعبر عن الحب والعشق بأسلوب شاعري، يمكن مشاركتها في المناسبات أو المحادثات الخاصة.</p>
   </div>
 
   <div class="category-section">
     <h3 class="section-title">بوستات اعتذار 💔</h3>
-    <p>عندما تخطئ وتحتاج للاعتذار، تجد هنا أفضل العبارات التي توصل مشاعر الندم والأسف.</p>
+    <p>عبارات تساعدك في الاعتذار والتعبير عن الأسف بطريقة مؤثرة، لتصلح أي خلاف أو سوء تفاهم مع من تحب.</p>
   </div>
 
   <div class="category-section">
     <h3 class="section-title">بوستات دينية وإسلامية 🕋</h3>
-    <p>اجعل كلماتك طيبة وملهمة من خلال البوستات الدينية التي تذكر الناس بآيات قرآنية وأحاديث شريفة.</p>
+    <p>بوستات تحمل قيم دينية، آيات قرآنية، وأحاديث نبوية، تلهمك وتشجعك على نشر الخير والتذكير بالعبادة والقيم الإسلامية.</p>
   </div>
 
   <div class="category-section">
-    <
+    <h3 class="section-title">بوستات مترجمة 🌍</h3>
+    <p>مجموعة من البوستات المترجمة من لغات مختلفة، تتيح لك مشاركة أفكار وكلمات عالمية وتجارب من ثقافات أخرى، مع إمكانية ترجمة بوستاتك للعربية أو الإنجليزية.</p>
+  </div>
 
+  <div class="category-section">
+    <h3 class="section-title">بوستات عيد ميلاد 🎂</h3>
+    <p>بوستات مميزة لتهنئة الأحباب والأصدقاء بعيد ميلادهم، مع عبارات فرح واحتفال تناسب كل الأعمار.</p>
+  </div>
 
+  <div class="category-section">
+    <h3 class="section-title">اسكربتات قصيرة وروايات ✍️</h3>
+    <p>نصوص إبداعية قصيرة، اسكربتات ومقتطفات من روايات، تلهمك وتساعدك على كتابة منشورات مميزة أو مشاركتها مع جمهورك.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">آيات قرآنية</h3>
+    <p>تشكيلة من الآيات القرآنية الكريمة التي يمكن مشاركتها في المناسبات الدينية أو استخدامها للتذكير بنعم الله.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">أدعية إسلامية</h3>
+    <p>مجموعة من الأدعية والأذكار التي تعينك على التقرب إلى الله، مناسبة للمشاركة في أي وقت أو مناسبة دينية.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">قسم ChatGPT</h3>
+    <p>قسم خاص يتيح لك كتابة أو توليد بوستات باستخدام الذكاء الاصطناعي، حيث يمكنك طرح سؤال أو طلب نص وسيقوم ChatGPT بمساعدتك فوراً.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">قسم التحديثات</h3>
+    <p>تابع كل جديد في التطبيق، مثل إضافة أقسام جديدة، تحسينات الأداء، أو ميزات مقترحة من المستخدمين. هذا القسم يضمن أن التطبيق دائمًا متجدد وملبي للاحتياجات.</p>
+  </div>
+
+  <div class="social-links">
+    <a href="javascript:openWhatsApp()">واتساب المطور</a>
+    <a href="javascript:openFacebook()">فيسبوك المطور</a>
+    <a href="javascript:openTelegram()">تيليجرام المطور</a>
+  </div>
+
+  <div class="download-btn">
+    <button onclick="openStore()">💾 تحميل التطبيق مباشر بدون إعلانات</button>
+  </div>
+
+  <div class="privacy-policy">
+    <a href="javascript:openPrivacy()">سياسة الخصوصية</a>
+  </div>
+
+</body>
+  </html>
