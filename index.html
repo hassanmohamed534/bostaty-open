@@ -6,58 +6,55 @@
   <title>بوستاتي AI - تطبيق مصري</title>
   <style>
     body {
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: linear-gradient(135deg, #2c3e50, #34495e);
       color: white;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      padding: 50px 20px;
+      padding: 30px;
     }
-    h2, h3 {
+    h2 {
       font-size: 2.5rem;
+      color: #ff6347;
+      font-weight: bold;
       margin-bottom: 20px;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-      font-weight: bold;
-      color: #ffd700;
     }
     h3 {
-      color: #ff6347;
+      font-size: 2rem;
+      color: #f39c12;
+      font-weight: bold;
+      margin-top: 15px;
     }
     .description, .features {
-      font-size: 1.1rem;
-      margin-top: 20px;
+      font-size: 1.2rem;
       text-align: justify;
+      margin-top: 20px;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
     .description p, .features p {
-      font-weight: bold;
-      color: #ffffff;
-      font-size: 1.2rem;
-    }
-    .feature-list li {
-      margin-bottom: 10px;
-      color: #fff;
+      font-weight: normal;
+      color: #ecf0f1;
       font-size: 1.1rem;
     }
-    .social-links {
-      margin-top: 30px;
+    .description strong, .features strong {
+      color: #ffeb3b;
     }
-    .social-links a {
-      background: #3b5998;
-      margin: 5px;
-      padding: 12px 30px;
-      border-radius: 20px;
-      color: white;
-      text-decoration: none;
-      transition: background 0.3s ease;
+    .feature-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px auto;
+      font-size: 1.1rem;
     }
-    .social-links a:hover {
-      background: #0d47a1;
+    .feature-list li {
+      margin-bottom: 15px;
+      color: #ecf0f1;
+      font-weight: bold;
     }
     button, a.button-link {
-      background: #ffd700;
-      color: #4b0082;
+      background: #ff6347;
+      color: #fff;
       font-weight: bold;
       font-size: 1.2rem;
       padding: 15px 30px;
@@ -71,13 +68,50 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
     button:hover, a.button-link:hover {
-      background: #4b0082;
-      color: #ffd700;
+      background: #d35400;
+      color: #fff;
+    }
+    .social-links {
+      margin-top: 30px;
+    }
+    .social-links a {
+      background: #3b5998;
+      margin: 5px;
+      padding: 12px 30px;
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      display: block;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .social-links a:hover {
+      background: #0d47a1;
     }
     .privacy-policy {
       margin-top: 40px;
       font-size: 1.1rem;
       color: #ffd700;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-top: 30px;
+    }
+
+    .category-section {
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #2ecc71;
+      color: #fff;
+      border-radius: 10px;
+      width: 80%;
+    }
+    .category-section:nth-child(even) {
+      background-color: #f39c12;
     }
   </style>
   <script>
@@ -94,43 +128,76 @@
       window.location = "https://t.me/hassan_mohamed_074";
     }
     function openPrivacy() {
-      window.location = "/privacy-policy.html";  // Create this file separately
+      window.location = "/privacy-policy.html";  // Ensure the privacy-policy.html file exists
     }
   </script>
 </head>
 <body>
-  <h2>✅ <span style="color:#ff6347;">شرح تفصيلي لتطبيق بوستاتي AI</span></h2>
+  <h2>✅ شرح تفصيلي لتطبيق بوستاتي AI</h2>
+
   <div class="description">
-    <p><strong>*بوستاتي AI هو تطبيق مصري الصنع 💪،*</strong></p>
-    <p><strong>*بيجمعلك أقوى وأغرب وأجمل أنواع البوستات كلها في مكان واحد، علشان تلاقي اللي على مزاجك في ثانية، وده كله بواجهة سهلة وسريعة.*</strong></p>
-    
-    <h3><span style="color:#ff6347;">🧠 مميزات التطبيق:</span></h3>
+    <p><strong>بوستاتي AI هو تطبيق مصري الصنع 💪،</strong></p>
+    <p><strong>بيجمعلك أقوى وأغرب وأجمل أنواع البوستات كلها في مكان واحد، علشان تلاقي اللي على مزاجك في ثانية، وده كله بواجهة سهلة وسريعة.</strong></p>
+  </div>
+
+  <h3>🧠 مميزات التطبيق:</h3>
+  <div class="features">
     <ul class="feature-list">
-      <li><strong>ذكاء اصطناعي Chat gpt</strong></li>
-      <li><strong>تصنيفات متنوعة جدًا زي: بوستات حب 💞، بوستات سرسجية 😂🔥، بوستات رومانسية 😍، بوستات اعتذار 💔، بوستات دينيه و إسلامية 🕋، بوستات مترجمة 🌍، بوستات عيد ميلاد 🎂، اسكربتات قصيرة وروايات ✍️، آيات قرآنية، أدعية إسلامية</strong></li>
+      <li><strong>ذكاء اصطناعي Chat GPT</strong></li>
+      <li><strong>تصنيفات متنوعة جدًا زي:</strong> بوستات حب 💞، بوستات سرسجية 😂🔥، بوستات رومانسية 😍، بوستات اعتذار 💔، بوستات دينيه وإسلامية 🕋، بوستات مترجمة 🌍، بوستات عيد ميلاد 🎂، اسكربتات قصيرة وروايات ✍️، آيات قرآنية، أدعية إسلامية.</li>
       <li><strong>قسم ChatGPT مدمج داخل التطبيق</strong></li>
       <li><strong>التطبيق يعمل بدون إنترنت في معظم الأقسام</strong></li>
       <li><strong>حجمه خفيف ومناسب لكل الأجهزة (12 ميجا فقط)</strong></li>
+      <li><strong>واجهة عصرية وسريعة جدًا و مفيش لاج ولا تهنيج</strong></li>
+      <li><strong>قسم التحديثات:</strong> تتبع كل جديد في التطبيق، زي الإضافات، تحسينات الأداء، التحديثات القادمة، واقتراحات المستخدمين التي تم تنفيذها ✅</li>
     </ul>
   </div>
 
   <div class="features">
-    <p><strong>🎯 **رابط التحميل مباشر وبدون إعلانات**:</strong></p>
+    <p><strong>🔗 معلومات إضافية:</strong></p>
+    <ul>
+      <li><strong>التطبيق يعمل بدون إنترنت في معظم الأقسام</strong></li>
+      <li><strong>حجمه خفيف ومناسب لكل الأجهزة (12 ميجا فقط)</strong></li>
+      <li><strong>كل الحقوق محفوظة باسم المطور: حسن محمد 🇪🇬</strong></li>
+    </ul>
   </div>
 
-  <!-- أزرار تانية هنا في الأسفل -->
-  <div class="social-links">
-    <button onclick="openStore()">افتح التطبيق أو حمّل</button>
-    <a class="button-link" href="https://www.mediafire.com/file/37se5kz8mpi8wt4/بوستاتيAi.apk/file" target="_blank" rel="noopener"><strong>تحميل التطبيق من ميديا فاير</strong></a>
-    <br />
-    <button onclick="openWhatsApp()">تواصل معي على واتساب</button>
-    <br />
-    <a href="https://www.facebook.com/hassanmohamed074" class="social-btn" target="_blank"><strong>تواصل عبر فيسبوك</strong></a>
-    <a href="https://t.me/hassan_mohamed_074" class="social-btn" target="_blank"><strong>تواصل عبر تليجرام</strong></a>
+  <div class="features">
+    <button onclick="openStore()">💾 تحميل التطبيق مباشر بدون إعلانات</button>
   </div>
 
-  <div class="privacy-policy">
-    <a href="javascript:void(0);" onclick="openPrivacy()"><strong>سياسة الخصوصية</strong></a>
+  <!-- Start category sections -->
+  <div class="category-section">
+    <h3 class="section-title">بوستات حب 💞</h3>
+    <p>كل ما تحتاجه من بوستات حب رومانسية وتعبير عن مشاعر القلب. لا تفوت فرصة إرسال أجمل الكلمات لحبيبك!</p>
   </div>
-</body>
-</html>
+
+  <div class="category-section">
+    <h3 class="section-title">بوستات سرسجية 😂🔥</h3>
+    <p>لما تحب تضحك وتضيف جو من الفكاهة على يومك، هنالك كل ما هو ساخن من البوستات الضاحكة.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">بوستات رومانسية 😍</h3>
+    <p>في هذا القسم، هتلاقي أجمل الكلمات الرومانسية التي تعبر عن الحب والعشق بأفضل شكل.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">بوستات اعتذار 💔</h3>
+    <p>عندما تخطئ وتحتاج للاعتذار، تجد هنا أفضل العبارات التي توصل مشاعر الندم والأسف.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">بوستات دينية وإسلامية 🕋</h3>
+    <p>اجعل كلماتك طيبة وملهمة من خلال البوستات الدينية التي تذكر الناس بآيات قرآنية وأحاديث شريفة.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">بوستات مترجمة 🌍</h3>
+    <p>نقدم لك بوستات مترجمة بلغات مختلفة لتتمكن من التواصل مع الجميع بكل سهولة.</p>
+  </div>
+
+  <div class="category-section">
+    <h3 class="section-title">بوستات عيد ميلاد 🎂</h3>
+    <p>احتفل مع أصدقائك بأجمل بوستات عيد الميلاد التي تحمل الأمنيات الطيبة والسعيدة.</p>
+  </div>
