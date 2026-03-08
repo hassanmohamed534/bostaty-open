@@ -1,559 +1,214 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>بوستاتي AI - تطبيق مصري</title>
-  <meta name="description" content="بوستاتي AI يقدم لك أقوى وأجمل وأحدث أنواع البوستات الذكية: حب، حزينة، سرسجية، رومانسية، اعتذار، دينية، مترجمة، عيد ميلاد، ذكاء اصطناعي، اسكربتات، منشورات جاهزة ومزيد! حمل أفضل تطبيق بوستات بدون إنترنت مجاناً.">
-  <meta name="keywords" content="بوستات, منشورات, أفضل تطبيق بوستات, تطبيق بوستات, تطبيق منشورات, بوستات حزينة, بوستات حب, بوستات سرسجية, بوستات رومانسية, بوستات اعتذار, بوستات دينية, بوستات إسلامية, بوستات مترجمة, بوستات عيد ميلاد, بوستات فيسبوك, بوستات صباح الخير, بوستات مساء الخير, بوستات اسكربتات, بوستات قصص, بوستات قرآنية, بوستات ادعية, بوستات مصرية, بوستات عربية, بوستات مضحكة, بوستات قصيرة, بوستات طويلة, بوستات جديدة, بوستات متنوعة, بوستات بدون نت, تطبيق بوستات مجاني, تطبيق بوستات بدون إنترنت, بوستات ChatGPT, ذكاء اصطناعي, تطبيق ذكاء اصطناعي, منشورات جاهزة, منشورات مضحكة, منشورات رومانسية, منشورات حزينة, منشورات حب, منشورات دينية, منشورات اعتذار, منشورات مترجمة, منشورات صباحية, منشورات مسائية, منشورات عيد ميلاد, منشورات اسلامية, منشورات قرآنية, منشورات ادعية, منشورات مصرية, منشورات عربية, منشورات متنوعة, منشورات جديدة, منشورات قصيرة, منشورات طويلة, منشورات مجانية, منشورات بدون نت, منشورات فيسبوك, Postaty AI, bostaty, bostaty app, bostaty ai, best post app, egypt app, arabic posts app, free posts app, funny posts app, sad posts app, romantic posts app, religious posts app, translated posts app, birthday posts app, facebook posts app, chatgpt posts, ai posts, egyptian posts, arabic ai, منشورات ذكاء اصطناعي, بوستات ذكاء اصطناعي, كلمات للبحث, بحث بوستات, تطبيق منشورات عربي, تطبيق منشورات مصر, تطبيق منشورات مجاني, تطبيق منشورات بدون نت, كلمات بحث بوستات, كلمات بحث منشورات, بوستات لكل المناسبات, بوستات لكل الأعمار, بوستات لكل الأذواق, بوستات لكل الأوقات, بوستات مميزة, بوستات حديثة, بوستات للاندرويد, تطبيق بوستات للاندرويد, تطبيق منشورات للاندرويد, تطبيق بوستات عربي, تطبيق بوستات مصر, تطبيق بوستات مجاني للاندرويد, تطبيق بوستات بدون إعلانات, تطبيق بوستات حديث, تطبيق بوستات سريع, تطبيق بوستات ذكي, تطبيق بوستات متنوع, تطبيق بوستات متجدد">
-  <style>
-    :root {
-      --main-bg: #000;
-      --card-bg: #fff;
-      --accent: #ff6347;
-      --gold: #ffd700;
-      --primary: #0ea3c6;
-      --secondary: #f39c12;
-      --blue-dark: #1877f2;
-      --turquoise: #00c7b7;
-      --text-main: #222f3e;
-      --text-alt: #222f3e;
-      --shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-    html {
-      box-sizing: border-box;
-      direction: rtl;
-      scroll-behavior: smooth;
-    }
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
-    body {
-      background: var(--main-bg);
-      color: var(--text-main);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      direction: rtl;
-      width: 100%;
-      max-width: 100%;
-      min-height: 100vh;
-    }
-    .navbar {
-      width: 100%;
-      background: #111;
-      box-shadow: var(--shadow);
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-    .navbar .logo {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
-    }
-    .navbar .menu-btn {
-      background: none;
-      border: none;
-      font-size: 2.1rem;
-      color: var(--accent);
-      cursor: pointer;
-      outline: none;
-      margin-left: 10px;
-      margin-right: 0;
-    }
-    .welcome-message {
-      background: linear-gradient(90deg, #0ea3c6 0%, #1877f2 60%, #ff6347 100%);
-      color: #fff;
-      padding: 25px 0;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 24px;
-      letter-spacing: 1px;
-      border-bottom-left-radius: 80px 45px;
-      border-bottom-right-radius: 80px 45px;
-      border-top-left-radius: 45px 20px;
-      border-top-right-radius: 45px 20px;
-      box-shadow: 0 8px 30px rgba(14,163,198,0.09);
-      position: relative;
-      overflow: hidden;
-    }
-    .welcome-message::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0; bottom: -1px;
-      width: 100%; height: 35px;
-      background: radial-gradient(ellipse at 50% 100%, #fff2 0%, transparent 80%);
-      z-index: 2;
-      pointer-events: none;
-    }
-    h2 {
-      font-size: 2.3rem;
-      color: var(--accent);
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.18);
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    h3, .section-title {
-      font-size: 1.65rem;
-      color: var(--secondary);
-      font-weight: bold;
-      margin: 25px 0 10px 0;
-      text-align: right;
-    }
-    .description, .features, .category-section {
-      margin-top: 20px;
-      max-width: 850px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: justify;
-      color: var(--text-main);
-      padding-right: 10px;
-      padding-left: 10px;
-      overflow-wrap: break-word;
-      word-break: break-word;
-    }
-    .description p, .features p, .category-section p {
-      font-weight: normal;
-      font-size: 1.13rem;
-      color: var(--text-alt) !important;
-    }
-    .description strong, .features strong {
-      color: var(--gold);
-    }
-    .category-section {
-      background: var(--card-bg);
-      color: var(--text-main);
-      padding: 22px 10px;
-      border-radius: 11px;
-      box-shadow: var(--shadow);
-      margin-bottom: 20px;
-      border-right: 6px solid var(--primary);
-      transition: box-shadow 0.2s;
-      overflow-wrap: break-word;
-      word-break: break-word;
-    }
-    .category-section:nth-of-type(even) {
-      background: var(--turquoise);
-      color: #fff;
-      border-right: 6px solid var(--secondary);
-    }
-    .category-section:nth-of-type(even) p {
-      color: #fff !important;
-    }
-    .feature-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 20px auto;
-      font-size: 1.12rem;
-    }
-    .feature-list li {
-      margin-bottom: 15px;
-      color: var(--primary);
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    button, a.button-link {
-      background: var(--accent);
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.18rem;
-      padding: 14px 28px;
-      margin: 15px 10px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s, color 0.3s;
-    }
-    button:hover, a.button-link:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-    .social-links {
-      margin-top: 25px;
-      text-align: center;
-    }
-    .social-links a {
-      background: var(--blue-dark);
-      margin: 5px 7px;
-      padding: 11px 26px;
-      border-radius: 18px;
-      color: white;
-      text-decoration: none;
-      transition: background 0.3s;
-      display: inline-block;
-      font-weight: bold;
-      font-size: 1.02rem;
-    }
-    .social-links a:hover {
-      background: var(--primary);
-    }
-    .download-btn {
-      text-align: center;
-      margin-top: 10px;
-      margin-bottom: 35px;
-    }
-    .privacy-policy {
-      margin-top: 35px;
-      font-size: 1.11rem;
-      color: var(--gold);
-      text-align: center;
-      padding-bottom: 72px;
-    }
-    .privacy-policy a {
-      color: var(--gold);
-      text-decoration: underline;
-      font-weight: bold;
-      background: none;
-      border: none;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: color 0.28s;
-    }
-    .privacy-policy a:hover {
-      color: var(--accent);
-    }
-    .rights-text {
-      margin-top: 10px;
-      color: var(--gold);
-      font-size: 1rem;
-      text-align: center;
-    }
-    .sidebar-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.32);
-      z-index: 150;
-      display: none;
-    }
-    .sidebar {
-      position: fixed;
-      top: 0; left: 0;
-      width: 320px;
-      max-width: 80vw;
-      height: 100vh;
-      background: var(--card-bg);
-      box-shadow: 2px 0 20px rgba(0,0,0,0.16);
-      z-index: 200;
-      transform: translateX(-100%);
-      transition: transform 0.3s;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    .sidebar.open {
-      transform: translateX(0);
-    }
-    .sidebar-header {
-      padding: 28px 24px 18px 24px;
-      background: linear-gradient(90deg, var(--primary) 70%, var(--accent) 120%);
-      color: #fff;
-      text-align: right;
-    }
-    .sidebar-header .app-title {
-      font-size: 1.35rem;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-    .sidebar-header .dev-name {
-      font-size: 1.08rem;
-      margin-bottom: 6px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-    .sidebar-close {
-      position: absolute;
-      top: 19px; left: 19px;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-      outline: none;
-    }
-    .sidebar-content {
-      padding: 22px 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-end;
-    }
-    .sidebar-content .sidebar-links {
-      width: 100%;
-      margin-bottom: 15px;
-    }
-    .sidebar-content .sidebar-links a {
-      display: block;
-      background: var(--blue-dark);
-      color: #fff;
-      text-decoration: none;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      padding: 10px 15px;
-      font-weight: bold;
-      transition: background 0.3s;
-      text-align: right;
-    }
-    .sidebar-content .sidebar-links a:hover {
-      background: var(--primary);
-    }
-    .sidebar-content .sidebar-privacy {
-      width: 100%;
-      margin-top: 12px;
-      text-align: right;
-    }
-    .sidebar-content .sidebar-privacy button {
-      width: 100%;
-      color: var(--gold);
-      background: none;
-      border: 2px solid var(--gold);
-      padding: 10px 0;
-      font-size: 1.09rem;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      margin-top: 8px;
-    }
-    .sidebar-content .sidebar-privacy button:hover {
-      background: var(--gold);
-      color: var(--accent);
-    }
-    .sidebar-content .sidebar-rights {
-      width: 100%;
-      margin-top: 10px;
-      text-align: right;
-    }
-    .sidebar-content .sidebar-rights .rights-text {
-      color: var(--gold);
-      font-size: 1rem;
-      text-align: right;
-      margin-top: 0;
-    }
-    .white-text {
-      color: #fff !important;
-    }
-    @media (max-width: 600px) {
-      h2 {font-size: 1.4rem;}
-      h3, .section-title {font-size: 1.1rem;}
-      .welcome-message {padding: 11px 0; font-size: 1.1rem;}
-      .category-section, .description, .features {padding: 10px;}
-      .navbar {padding: 7px 8px;}
-      .sidebar {width: 90vw;}
-      button, a.button-link {padding: 9px 10px; font-size: 1rem;}
-      .social-links a {width: 98%; padding: 7px;}
-    }
-  </style>
-  <script>
-    function openStore() {
-      window.location = "https://www.mediafire.com/file/c5w36kn3scley2b/Bostaty+Ai+2025-09-20.apk/file";
-    }
-    function openWhatsApp() {
-      window.location = "https://wa.me/+201016243039";
-    }
-    function openFacebook() {
-      window.location = "https://www.facebook.com/hassanmohamed074";
-    }
-    function openTelegram() {
-      window.location = "https://t.me/hassan_mohamed_074";
-    }
-    function openSidebar() {
-      document.getElementById('sidebar').classList.add('open');
-      document.getElementById('sidebar-overlay').style.display = "block";
-    }
-    function closeSidebar() {
-      document.getElementById('sidebar').classList.remove('open');
-      document.getElementById('sidebar-overlay').style.display = "none";
-    }
-    window.onload = function() {
-      document.getElementById('sidebar-overlay').onclick = closeSidebar;
-    };
-  </script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>بوستاتي | Bostaty App</title>
+
+<meta name="description" content="تطبيق بوستاتي يوفر مئات البوستات الجاهزة للفيسبوك والواتساب مثل الحب والحزن والرومانسية والاعتذار والمقولات والأقسام الإسلامية والقرآن الكريم وأكثر من 155 قارئ.">
+
+<meta name="keywords" content="بوستات, منشورات, تطبيق بوستات, بوستات حب, بوستات حزينة, بوستات رومانسية, بوستات اسلامية, بوستات عيد ميلاد, تطبيق منشورات عربي, bostaty app">
+
+<meta name="author" content="Hassan Mohamed">
+<meta name="robots" content="index,follow">
+
+<style>
+
+body{
+background:#000;
+color:#fff;
+font-family:Tahoma;
+margin:0;
+direction:rtl;
+text-align:center;
+}
+
+.navbar{
+background:#111;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+color:#ff6347;
+}
+
+.welcome{
+background:#0ea3c6;
+padding:30px 10px;
+font-size:20px;
+}
+
+.section{
+padding:25px 15px;
+max-width:900px;
+margin:auto;
+}
+
+.section h2{
+color:#ff6347;
+margin-bottom:15px;
+}
+
+.card{
+background:#fff;
+color:#222;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+}
+
+button{
+background:#ff6347;
+border:none;
+padding:14px 25px;
+border-radius:30px;
+font-size:16px;
+color:white;
+margin:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0ea3c6;
+}
+
+.download{
+margin-top:30px;
+}
+
+.footer{
+margin-top:40px;
+padding:20px;
+font-size:14px;
+color:#ccc;
+}
+
+</style>
+
+<script>
+
+function downloadNew(){
+window.location="https://www.mediafire.com/file/yl807jz98n5ammr/Bostaty+Ai+2026-1.apk/file"
+}
+
+function downloadOld(){
+window.location="https://www.mediafire.com/file/c5w36kn3scley2b/Bostaty+Ai+2025-09-20.apk/file"
+}
+
+function openWhats(){
+window.location="https://wa.me/+201016243039"
+}
+
+</script>
+
 </head>
+
 <body>
-  <div class="navbar">
-    <span class="logo">بوستاتي AI</span>
-    <button class="menu-btn" onclick="openSidebar()" title="القائمة">
-      &#8942;
-    </button>
-  </div>
 
-  <div id="sidebar-overlay" class="sidebar-overlay"></div>
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <button class="sidebar-close" onclick="closeSidebar()" title="إغلاق القائمة">&times;</button>
-      <div class="app-title">بوستاتي AI</div>
-      <div class="dev-name">حسن محمد 🇪🇬</div>
-    </div>
-    <div class="sidebar-content">
-      <div class="sidebar-links">
-        <a href="javascript:openWhatsApp()">واتساب المطور</a>
-        <a href="javascript:openFacebook()">فيسبوك المطور</a>
-        <a href="javascript:openTelegram()">تيليجرام المطور</a>
-      </div>
-      <div class="sidebar-privacy">
-        <button onclick="window.location='privacy-policy.html'">سياسة الخصوصية</button>
-      </div>
-      <div class="sidebar-rights">
-        <div class="rights-text">
-          جميع الحقوق محفوظة 2021-2025
-        </div>
-      </div>
-    </div>
-  </aside>
-
-  <div class="welcome-message">
-    مرحباً بك في بوستاتي AI 👋<br>
-    اكتشف عالم البوستات الذكية والمتنوعة، وشارك أجمل الكلمات مع أصدقائك بسهولة!
-  </div>
-
-  <h2>✅ شرح تفصيلي لتطبيق بوستاتي AI</h2>
-
-  <div class="description">
-    <p>
-      <strong>بوستاتي AI هو تطبيق مصري مبتكر 💪</strong>
-      <span class="white-text">
-      يجمع لك أقوى وأغرب وأجمل أنواع البوستات كلها في مكان واحد، علشان تلاقي اللي يناسبك وتشارك بسهولة.<br>
-      التطبيق سهل وبسيط ويحتوي على تصنيفات كثيرة جداً مع ذكاء اصطناعي يساعدك في الكتابة والترجمة والعثور على أفكار جديدة بسرعة.<br>
-      متجدد دائماً ويشتغل على كل الأجهزة!
-      </span>
-    </p>
-  </div>
-
-  <h3>🧠 مميزات التطبيق:</h3>
-  <div class="features">
-    <ul class="feature-list">
-      <li><strong>ذكاء اصطناعي ChatGPT</strong> مدمج داخل التطبيق لمساعدتك في كتابة وتوليد نصوص متنوعة.</li>
-      <li><strong>تصنيفات متنوعة جداً</strong> مثل بوستات حب، سرسجية، رومانسية، اعتذار، دينية، مترجمة، عيد ميلاد، اسكربتات، وغيرهم.</li>
-      <li><strong>أغلب الأقسام تعمل بدون إنترنت</strong> لتوفير سهولة وسرعة في الاستخدام.</li>
-      <li><strong>حجم خفيف جداً</strong> مناسب لكل الأجهزة (12 ميجا فقط).</li>
-      <li><strong>واجهة عصرية وسريعة جداً</strong> بدون تهنيج أو تأخير.</li>
-      <li><strong>قسم التحديثات</strong> لمتابعة كل جديد في التطبيق واقتراحات المستخدمين.</li>
-    </ul>
-  </div>
-
-  <div class="features">
-    <p><strong>🔗 معلومات إضافية:</strong></p>
-    <ul>
-      <li>
-        <span class="white-text">التطبيق من تطوير <strong>حسن محمد 🇪🇬</strong> وكل الحقوق محفوظة.<br>
-        يدعم جميع الأعمار ويعمل على كل أجهزة الأندرويد.</span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات حب 💞</h3>
-    <p>أجمل وأرق الكلمات والعبارات للتعبير عن مشاعر الحب والرومانسية تجاه من تحب، لتشاركها مع شريك حياتك أو خطيبك.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات حزينة 😢</h3>
-    <p>أقوى وأجدد البوستات الحزينة والمؤثرة التي تعبر عن مشاعر الحزن والوجع، شاركها مع أصدقائك لتخفف عن نفسك أو تواسي غيرك.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات سرسجية 😂🔥</h3>
-    <p>بوستات فكاهية وساخرة تعكس روح الشباب المصري، مناسبة للمواقف اليومية والمقالب بين الأصدقاء وتضيف جو من المرح.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات رومانسية 😍</h3>
-    <p>كلمات رقيقة وعبارات حالمة تعبر عن الحب والعشق بأسلوب شاعري، يمكن مشاركتها في المناسبات أو المحادثات الخاصة.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات اعتذار 💔</h3>
-    <p>عبارات مؤثرة تساعدك في الاعتذار والتعبير عن الأسف بطريقة راقية، لتصالح من تحب وتصلح أي خلاف أو سوء تفاهم.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات دينية وإسلامية 🕋</h3>
-    <p>بوستات تحمل قيم دينية، آيات قرآنية، وأحاديث نبوية، تلهمك وتشجعك على نشر الخير والتذكير بالعبادة والقيم الإسلامية.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات مترجمة 🌍</h3>
-    <p>مجموعة من البوستات المترجمة من لغات مختلفة، تتيح لك مشاركة أفكار وكلمات عالمية وتجارب من ثقافات أخرى مع أصدقائك.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">بوستات عيد ميلاد 🎂</h3>
-    <p>بوستات مميزة لتهنئة الأحباب والأصدقاء بعيد ميلادهم، مع عبارات فرح واحتفال تناسب كل الأعمار وتضفي سعادة وبهجة.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">اسكربتات قصيرة وروايات ✍️</h3>
-    <p>نصوص إبداعية قصيرة، اسكربتات ومقتطفات من روايات، تلهمك وتساعدك على كتابة منشورات مميزة أو مشاركتها مع جمهورك.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">آيات قرآنية</h3>
-    <p>مجموعه من الآيات القرآنية الكريمة التي يمكن مشاركتها في المناسبات الدينية أو استخدامها للتذكير بنعم الله علينا.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">أدعية إسلامية</h3>
-    <p>مجموعة من الأدعية والأذكار التي تعينك على التقرب إلى الله، مناسبة للمشاركة في أي وقت أو مناسبة دينية.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">قسم ChatGPT</h3>
-    <p>قسم خاص يتيح لك كتابة أو توليد بوستات باستخدام الذكاء الاصطناعي، حيث يمكنك طرح سؤال أو طلب نص وسيقوم ChatGPT بالرد عليك مباشرة.</p>
-  </div>
-
-  <div class="category-section">
-    <h3 class="section-title">قسم التحديثات</h3>
-    <p>تابع كل جديد في التطبيق، مثل إضافة أقسام جديدة، تحسينات الأداء، أو ميزات مقترحة من المستخدمين. هذا القسم يتيح لك مواكبة التطوير أولاً بأول.</p>
-  </div>
-
-  <div class="social-links">
-    <a href="javascript:openWhatsApp()">واتساب المطور</a>
-    <a href="javascript:openFacebook()">فيسبوك المطور</a>
-    <a href="javascript:openTelegram()">تيليجرام المطور</a>
-  </div>
-  
-<!-- فوق زر تحميل التطبيق -->
-<div class="download-btn">
-  <p style="margin-bottom: 8px; font-weight: bold; color: var(--primary); font-size: 1.13rem;">
-    تاريخ التحديث 2025/09/15
-  </p>
-  <button onclick="openStore()">💾 تحميل التطبيق مباشر بدون إعلانات</button>
+<div class="navbar">
+بوستاتي | Bostaty App
 </div>
 
-  
-  <div class="privacy-policy">
-    <a href="privacy-policy.html">سياسة الخصوصية</a>
-    <div class="rights-text">
-      جميع الحقوق محفوظة 2021-2025
-    </div>
-  </div>
+<div class="welcome">
+مرحبا بك في تطبيق بوستاتي 👋 <br>
+أكبر مكتبة بوستات عربية جاهزة للمشاركة
+</div>
 
-  <!-- كلمات بحث قوية وسيو مخفية لكل أنواع البوستات والتطبيقات -->
-  <div style="display:none;">
-    بوستات, منشورات, أفضل تطبيق بوستات, تطبيق بوستات, تطبيق منشورات, بوستات حزينة, بوستات حب, بوستات سرسجية, بوستات رومانسية, بوستات اعتذار, بوستات دينية, بوستات إسلامية, بوستات مترجمة, بوستات عيد ميلاد, بوستات فيسبوك, بوستات صباح الخير, بوستات مساء الخير, بوستات اسكربتات, بوستات قصص, بوستات قرآنية, بوستات ادعية, بوستات مصرية, بوستات عربية, بوستات مضحكة, بوستات قصيرة, بوستات طويلة, بوستات جديدة, بوستات متنوعة, بوستات بدون نت, تطبيق بوستات مجاني, تطبيق بوستات بدون إنترنت, بوستات ChatGPT, ذكاء اصطناعي, تطبيق ذكاء اصطناعي, منشورات جاهزة, منشورات مضحكة, منشورات رومانسية, منشورات حزينة, منشورات حب, منشورات دينية, منشورات اعتذار, منشورات مترجمة, منشورات صباحية, منشورات مسائية, منشورات عيد ميلاد, منشورات اسلامية, منشورات قرآنية, منشورات ادعية, منشورات مصرية, منشورات عربية, منشورات متنوعة, منشورات جديدة, منشورات قصيرة, منشورات طويلة, منشورات مجانية, منشورات بدون نت, منشورات فيسبوك, Postaty AI, bostaty, bostaty app, bostaty ai, best post app, egypt app, arabic posts app, free posts app, funny posts app, sad posts app, romantic posts app, religious posts app, translated posts app, birthday posts app, facebook posts app, chatgpt posts, ai posts, egyptian posts, arabic ai, منشورات ذكاء اصطناعي, بوستات ذكاء اصطناعي, كلمات للبحث, بحث بوستات, تطبيق منشورات عربي, تطبيق منشورات مصر, تطبيق منشورات مجاني, تطبيق منشورات بدون نت, كلمات بحث بوستات, كلمات بحث منشورات, بوستات لكل المناسبات, بوستات لكل الأعمار, بوستات لكل الأذواق, بوستات لكل الأوقات, بوستات مميزة, بوستات حديثة, بوستات للاندرويد, تطبيق بوستات للاندرويد, تطبيق منشورات للاندرويد, تطبيق بوستات عربي, تطبيق بوستات مصر, تطبيق بوستات مجاني للاندرويد, تطبيق بوستات بدون إعلانات, تطبيق بوستات حديث, تطبيق بوستات سريع, تطبيق بوستات ذكي, تطبيق بوستات متنوع, تطبيق بوستات متجدد
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
+<div class="section">
+
+<h2>تحميل التطبيق</h2>
+
+<p>
+الإصدار الحالي : v1.0.0 <br>
+تاريخ التحديث : 2026/01/05 <br>
+حجم التطبيق : 17MB
+</p>
+
+<div class="download">
+
+<button onclick="downloadNew()">
+تحميل الإصدار الحالي
+</button>
+
+<button onclick="downloadOld()">
+تحميل نسخة أقدم (2025/09/20)
+</button>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>مميزات التطبيق</h2>
+
+<div class="card">
+14 نوع مختلف من البوستات مثل الحب والحزن والرومانسية والاعتذار والمقولات والحكم والاسكربتات القصيرة.
+</div>
+
+<div class="card">
+القسم الإسلامي المتكامل يحتوي على بوستات إسلامية وأدعية وآيات قرآنية.
+</div>
+
+<div class="card">
+القرآن الكريم كامل للقراءة والنسخ والاستماع.
+</div>
+
+<div class="card">
+الاستماع للقرآن الكريم 24 ساعة بدون توقف بأكثر من 155 قارئ.
+</div>
+
+<div class="card">
+سبحة إلكترونية بالأذكار مع عداد تسبيح.
+</div>
+
+<div class="card">
+قصص الأنبياء وأسماء الله الحسنى مع التفسير.
+</div>
+
+<div class="card">
+صفحة رسائل سرية لكتابة رسالة لأي شخص بدون معرفة هويتك.
+</div>
+
+<div class="card">
+إمكانية نشر بوستات المستخدمين داخل التطبيق باسمك.
+</div>
+
+<div class="card">
+التطبيق يعمل بدون إنترنت بعد أول تشغيل.
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>عن التطبيق</h2>
+
+<p>
+بوستاتي هو تطبيق عربي تم تطويره بواسطة حسن محمد 🇪🇬
+ليوفر أفضل البوستات والمنشورات الجاهزة للمشاركة على مواقع التواصل الاجتماعي.
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>التواصل مع المطور</h2>
+
+<button onclick="openWhats()">
+التواصل عبر واتساب
+</button>
+
+</div>
+
+<div class="footer">
+
+جميع الحقوق محفوظة © حسن محمد 2026
+
+</div>
+
 </body>
-  </html>
-
-
-
+</html>
